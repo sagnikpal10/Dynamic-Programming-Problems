@@ -14,4 +14,25 @@ def lcs_dp(s1, s2, n1, n2):
 
     return result
 
-print(lcs_dp("forgeeksskeegfor", "forgeeksskeegfor"[::-1], 16, 16))
+
+def lps(seq, i, j, ans): 
+	# Base Case 1: If there is 
+	# only 1 character 
+	if (i == j): 
+		return ans + 1
+
+	# Base Case 2: If there are only 2 
+	# characters and both are same 
+	if (seq[i] == seq[j] and i + 1 == j): 
+		return 2 + ans
+	
+	# If the first and last characters match 
+	if (seq[i] == seq[j]): 
+		return lps(seq, i + 1, j - 1, ans + 2)
+
+	# If the first and last characters 
+	# do not match 
+	return max(ans, lps(seq, i, j - 1, 0), lps(seq, i + 1, j, 0)) 
+
+print(lps("babcbabcbaccba", 0, 13, 0))
+print(lcs_dp("babcbabcbaccba", "babcbabcbaccba"[::-1], 14, 14))
