@@ -11,4 +11,8 @@ def max_points(coins, start, end):
     return max(option_1, option_2)
 
 
+            
+
+
 print(max_points([20, 30, 2, 2, 2, 10], 0, 5))
+print(max_points_dp([20, 30, 2, 2, 2, 10], 6))
