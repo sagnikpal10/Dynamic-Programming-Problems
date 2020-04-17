@@ -1,4 +1,3 @@
-
 import sys
 
 def min_ops(matrix, i, j):
