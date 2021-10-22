@@ -7,7 +7,7 @@ def isSubsetSum(arr, n, sum):
         return isSubsetSum(arr, n-1, sum)
     return isSubsetSum(arr, n-1, sum) or isSubsetSum(arr, n-1, sum-arr[n-1])
 
-def findPartion(arr, n):
+def findPartition(arr, n):
     sum = 0
     for i in range(0, n):
         sum += arr[i]
@@ -18,7 +18,7 @@ def findPartion(arr, n):
 arr = [3, 1, 5, 9, 12]
 n = len(arr)
 
-if findPartion(arr, n) == True:
+if findPartition(arr, n) == True:
     print("Can be divided into two subsets of equal sum")
 else:
     print("Can not be divided into two subsets of equal sum")
